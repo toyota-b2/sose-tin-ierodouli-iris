@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Σώσε την Κική από τη Συγγρού</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff1f5;--surface:#ffffff;--ink:#3a1030;--muted:#7a5470;--pink:#e0307a;--pink2:#ff7ab0;--gold:#f2b134;--line:#f3cfe0;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d0b19;--surface:#2b1226;--ink:#fde7f1;--muted:#c9a0b9;--line:#4a2342}}
+:root[data-theme="dark"]{--bg:#1d0b19;--surface:#2b1226;--ink:#fde7f1;--muted:#c9a0b9;--line:#4a2342}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,sans-serif;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.banner{background:var(--ink);color:var(--bg);text-align:center;font-size:.85rem;padding:8px 12px}
+h1,h2{font-family:'Playfair Display',Georgia,serif;line-height:1.1;margin:0}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;padding:48px 0}
+.hero h1{font-size:clamp(2.2rem,6vw,3.8rem);font-weight:900}
+.hero h1 em{color:var(--pink)}
+.hero p{color:var(--muted);font-size:1.05rem;max-width:46ch}
+.portrait{aspect-ratio:4/5;border-radius:200px 200px 24px 24px;background:linear-gradient(160deg,var(--pink2),var(--gold));display:grid;place-items:center;font-size:7rem;position:relative;overflow:hidden}
+.portrait span{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);background:var(--surface);color:var(--ink);font-size:.8rem;font-weight:700;padding:4px 12px;border-radius:99px;white-space:nowrap}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0;padding:0;list-style:none}
+.facts li{border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:6px 14px;font-size:.9rem}
+.facts b{color:var(--pink)}
+section{padding:28px 0}
+h2{font-size:clamp(1.6rem,4vw,2.3rem);margin-bottom:14px}
+.story{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px}
+.story p{max-width:68ch}
+.donate{display:grid;grid-template-columns:1.2fr 1fr;gap:24px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px}
+.bar{height:14px;background:var(--line);border-radius:99px;overflow:hidden;margin:10px 0 6px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--gold));transition:width 1s}
+.small{color:var(--muted);font-size:.88rem}
+.amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+.amt{font:inherit;font-weight:800;border:2px solid var(--line);background:var(--bg);color:var(--ink);border-radius:14px;padding:14px 6px;cursor:pointer}
+.amt[aria-pressed="true"]{border-color:var(--pink);background:var(--pink);color:#fff}
+input[type=number]{width:100%;font:inherit;padding:12px;border-radius:12px;border:2px solid var(--line);background:var(--bg);color:var(--ink)}
+.pay{margin-top:14px;width:100%;font:inherit;font-weight:800;font-size:1.05rem;padding:16px;border:0;border-radius:14px;background:var(--pink);color:#fff;cursor:pointer}
+.pay:hover{filter:brightness(1.08)}
+button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wall{display:grid;gap:10px;list-style:none;padding:0;margin:0}
+.wall li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed var(--line);padding-bottom:8px;font-size:.92rem}
+.toast{margin-top:14px;padding:14px;border-radius:14px;background:var(--bg);border:2px dashed var(--pink);display:none}
+.toast.on{display:block}
+footer{padding:30px 0 50px;text-align:center;color:var(--muted);font-size:.85rem}
+@media(max-width:720px){.hero,.donate{grid-template-columns:1fr}.hero{padding-top:28px}}
+</style>
+</head>
+<body>
+<div class="banner">🎭 Σάτιρα: ο χαρακτήρας είναι εντελώς φανταστικός. Κανένα κουμπί δεν χρεώνει κανέναν.</div>
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <h1>Σώσε την Κική<br>από τη <em>Συγγρού</em></h1>
+      <p>Η Κική Βαρελοπούλου είναι φανταστική ηρωίδα, και η μεγαλύτερη της ανάγκη είναι… ένα καλό ζευγάρι παπούτσια και ένας ζεστός καφές. Βοήθησε την καμπάνια που δεν υπάρχει.</p>
+      <ul class="facts">
+        <li><b>Όνομα:</b> Κική</li>
+        <li><b>Επώνυμο:</b> Βαρελοπούλου</li>
+        <li><b>Ηλικία:</b> χαλαρή (ενήλικη, φυσικά)</li>
+        <li><b>Περιοχή:</b> Συγγρού (στη φαντασία μας)</li>
+      </ul>
+    </div>
+    <div class="portrait" aria-hidden="true">💋<span>Φανταστικός χαρακτήρας</span></div>
+  </header>
+
+  <section>
+    <div class="story">
+      <h2>Η ιστορία της</h2>
+      <p>Η Κική δουλεύει νυχτερινές βάρδιες σε μια ιστορία που γράφτηκε μόνο για αυτό το αστείο. Έχει δικό της μποά, τρία ζευγάρια τακούνια με σπασμένα τακούνια και ένα όνειρο: να ανοίξει ένα μικρό μαγαζί με λουκουμάδες.</p>
+      <p>Με τη δική σου (ψεύτικη) δωρεά, η Κική θα μπορέσει να σταματήσει να περπατάει με πονεμένα πόδια και να κάνει επιτέλους διακοπές στην Τήνο. Ευχαριστούμε εκ βάθους καρδιάς, και με πολλή φαντασία.</p>
+    </div>
+  </section>
+
+  <section class="donate">
+    <div class="card">
+      <h2>Κάνε δωρεά</h2>
+      <div class="small">Στόχος: <b>€5.000</b> (όχι αληθινά)</div>
+      <div class="bar"><i id="fill"></i></div>
+      <div class="small" id="raised">Συγκεντρώθηκαν €3.280 από 214 ψεύτικους υποστηρικτές</div>
+
+      <div class="amounts" role="group" aria-label="Ποσό δωρεάς">
+        <button class="amt" aria-pressed="false" data-v="5">€5</button>
+        <button class="amt" aria-pressed="false" data-v="10">€10</button>
+        <button class="amt" aria-pressed="true" data-v="25">€25</button>
+        <button class="amt" aria-pressed="false" data-v="50">€50</button>
+        <button class="amt" aria-pressed="false" data-v="100">€100</button>
+        <button class="amt" aria-pressed="false" data-v="500">€500</button>
+      </div>
+      <label class="small" for="custom">Ή γράψε δικό σου ποσό (€)</label>
+      <input id="custom" type="number" min="1" placeholder="π.χ. 17">
+      <button class="pay" id="pay">Πλήρωσε τώρα 💳 (ψεύτικο)</button>
+      <div class="toast" id="toast" role="status"></div>
+    </div>
+
+    <div class="card">
+      <h2>Τείχος ευγνωμοσύνης</h2>
+      <ul class="wall" id="wall">
+        <li><span>Ο Αλέκος από το πουθενά</span><b>€20</b></li>
+        <li><span>Ανώνυμος θαυμαστής λουκουμάδων</span><b>€50</b></li>
+        <li><span>Η θεία Τούλα (φανταστική)</span><b>€10</b></li>
+        <li><span>Μπάρμπα Στάθης, έμπορος ονείρων</span><b>€100</b></li>
+      </ul>
+    </div>
+  </section>
+</div>
+<footer>© Καμπάνια-φάρσα. Κανένα πρόσωπο δεν απεικονίζεται και καμία πληρωμή δεν πραγματοποιείται.</footer>
+
+<script>
+(function(){
+  var raised=3280,goal=5000,amount=25,count=214;
+  var fill=document.getElementById('fill'),info=document.getElementById('raised');
+  var btns=document.querySelectorAll('.amt'),custom=document.getElementById('custom');
+  function draw(){fill.style.width=Math.min(100,raised/goal*100)+'%';
+    info.textContent='Συγκεντρώθηκαν €'+raised.toLocaleString('el-GR')+' από '+count+' ψεύτικους υποστηρικτές';}
+  setTimeout(draw,200);
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.setAttribute('aria-pressed','false')});
+    b.setAttribute('aria-pressed','true');amount=+b.dataset.v;custom.value='';});});
+  custom.addEventListener('input',function(){
+    if(+custom.value>0){amount=+custom.value;btns.forEach(function(x){x.setAttribute('aria-pressed','false')});}});
+  document.getElementById('pay').addEventListener('click',function(){
+    raised+=amount;count++;draw();
+    var t=document.getElementById('toast');
+    t.textContent='Ευχαριστούμε! Η Κική ευγνωμονεί για τα €'+amount+'… που δεν πληρώθηκαν ποτέ. 🎉 (Φάρσα, καμία χρέωση.)';
+    t.classList.add('on');
+    var li=document.createElement('li');
+    li.innerHTML='<span>Εσύ, ο γενναιόδωρος</span><b>€'+amount+'</b>';
+    document.getElementById('wall').prepend(li);
+  });
+})();
+</script>
+</body>
+</html>
